@@ -1,27 +1,3 @@
-// Starting on the JS, get the core mechanic of typing down. You'll have to handle
-// Handle a keystroke with a letter.
-
-// Handle a wrong keystroke (like a number or spacebar). Ignore it.
-// Handle "Enter" when the word is complete (go to the next line)
-// Handle "Enter" when the word is incomplete (ignore it)
-// Handle "Backspace" when there's a letter to delete
-// Handle "Backspace" when there's no letter to delete
-// Handle the API request to get the word of the day
-// Handle checking just if the word submitted after a user hits enter is the word is the word of the day
-// Handle the "win" condition (I'd just start with alert('you win')))
-// Handle the "lose" condition (I'd just start with alert('you lose, the word was ' + word)))
-// Handle the guess's correct letter in the correct space (the green squares)
-// Handle the guess's wrong letters outright (the gray squares)
-// Handle the yellow squares
-// Handle the correct letters, wrong space (the yellow squares) naïvely. If a word contains the letter at all but it's in the wrong square, just mark it yellow.
-// Handle the yellow squares correctly. For example, if the player guesses "SPOOL" and the word is "OVERT", one "O" is shown as yellow and the second one is not. Green squares count too.
-// Add some indication that a user needs to wait for you waiting on the API, some sort of loading spinner.
-// Add the second API call to make sure a user is requesting an actual word.
-// Add some visual indication that the user guessed something isn't an actual word (I have the border flash red on the current line)
-// Add some fun animation for a user winning (I have the Word Masters brand flash rainbow colors)
-
-// Add some fun animation for a user losing (I have the Word Masters brand flash rainbow colors)
-
 
 const letters = document.querySelectorAll('.box');  // Select all the boxes
 const loading = document.querySelector('.info-bar');  // Select the loading spinner
@@ -30,18 +6,51 @@ const ANSWER_LENGTH = 5;  // Set the answer length to 5
 
 async function init() {
   let currentGuess = ''; 
+  let currentRow = 0;
+  let done = false;
+  let isLoading = true;
 
+  setLoading(true);  // Show the loading spinner
+  const response = await fetch('https://words.dev-apis.com/word-of-the-day');  // Get the word from the API
+  const responseObject = await response.json();
+  const word = responseObject.word.toUpperCase();  // Convert the word to uppercase
+  isLoading = false;
+  setLoading(isLoading);  // Hide the loading spinner
+  
 
 
   function addLetter(letter) {
     if (currentGuess.length < ANSWER_LENGTH) {
-      currentGuess += letter;   // Add the letter to the box
+      currentGuess += letter;   // Add the letter to the last box
     } else {
       currentGuess = currentGuess.substring(0, ANSWER_LENGTH - 1) + letter;
     }
-    letters[currentGuess.length - 1].innerHTML = letter;  // Add the letter to the box
-  }
 
+    letters[ANSWER_LENGTH * currentRow + currentGuess.length - 1].innerHTML = letter;  // Add the letter to the last box 
+    //by taking the ANSWER_LENGTH - 1 from the currentRow and add the letter
+
+  }
+  async function commit() {
+    // user try to guess the word
+    if (currentGuess.length !== ANSWER_LENGTH) {
+      return; // if the word isn't fill in yet, do nothing
+      }
+
+    // TODO: valitate the word
+
+    // TODO: do all marking  as "correct" and "wrong" here
+
+    // TODO: did user win or lose?  
+    currentRow++;
+    currentGuess = '';
+    }
+  function backspace() {
+    if(currentGuess.length > 0) {
+    currentGuess = currentGuess.substring(0, currentGuess.length - 1);  // Remove the last letter
+    letters[ANSWER_LENGTH * currentRow + currentGuess.length].innerHTML = '';
+    }
+  }
+  
 
   document.addEventListener('keydown', function handleKeyPress(event) {
     const action = event.key;   // Get the key that was pressed
@@ -58,6 +67,12 @@ async function init() {
 }
 function isLetter(letter) {
   return /[a-zA-Z]/.test(letter);       //handle only letters
+}
+function setLoading(isLoading) {
+  loading.classList.toggle('hidden', !isLoading);
+    //show the loading spinner
+    //hide the loading spinner
+   
 }
 
 init();
