@@ -1,0 +1,83 @@
+:root {
+ --black: #171321;
+ --dkblue: #0d314b;
+ --plum: #4b0d49;
+ --hotmag: #ff17e4;
+ --magenta: #e310cb;
+ --aqua: #86fbfb;
+ --white: #f7f8f8;  
+ --font-size: 1.3rem;
+ --mono: "Oxygen Mono", monospace;
+ --sans: Oxygen, sans-serif;
+}
+
+
+#dot{
+  color:deeppink;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+
+} 
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* intro  */
+#intro {
+  padding-bottom: 10rem;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#intro .name {
+  font-family: var(--mono);
+}
+
+.name span {
+  font-size: 3.5rem;
+  color: var(--hotmag);
+  display: block;
+}
+#intro h2 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+#contact {
+  width: 100%;
+  background-color: var(--plum);
+  text-align: center;
+  padding: 3rem 0;
+  margin: 0 auto;
+  font-family: var(--mono);
+}
+
+#contact a {
+  color: var(--aqua);
+}
+#contact a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+#contact p:last-child {
+  margin-top: 3rem;
+}
