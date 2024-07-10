@@ -103,5 +103,54 @@ nav ul {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+nav li:first-child {
+  flex-basis: 100%;
+  align-items: center;
+  text-align: center;
+
+}
+nav [class^="fa"] {
+  font-size: 150%;
+  color: var(--aqua);
+
+}
+nav [class^="fa"] {
+  font-size: 150%;
+  color: var(--aqua);
+
+}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+nav a:hover {
+  color: var(--hotmag);
+}
+.button {
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-bottom: 2px solid var(--hotmag);
+  color: var(--white);
+  font-family: var(--mono);
+}
+.button:hover {
+  background-color: var(--hotmag);
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+      margin-right: auto;
+  }
   
 }
