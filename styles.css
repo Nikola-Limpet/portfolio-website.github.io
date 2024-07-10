@@ -40,7 +40,10 @@ h1, h2, h3 {
 
 /* intro  */
 #intro {
-  padding-bottom: 10rem;
+  padding:4rem 1.5rem 10rem 1.5rem; 
+  max-width: 1200px;
+  margin: 0 auto;
+
 }
 
 #intro p {
@@ -135,6 +138,7 @@ nav a:hover {
   border-bottom: 2px solid var(--hotmag);
   color: var(--white);
   font-family: var(--mono);
+  text-decoration: none;
 }
 .button:hover {
   background-color: var(--hotmag);
@@ -152,5 +156,34 @@ nav a:hover {
     text-align: left;
       margin-right: auto;
   }
-  
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+footer ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-size: 3rem;
+}
+footer a {
+  color: var(--aqua);
+  text-decoration: none;
+  display: block;
+}
+footer a:hover {
+  color: var(--hotmag); 
+}
+.highlight {  
+  font-family: var(--mono);
+
 }
