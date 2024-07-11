@@ -120,8 +120,8 @@ async function init() {
   
 
   document.addEventListener('keydown', function handleKeyPress(event) {
-    // i dont want user to use alt and control key that will show up in the box. so help me to prevent that
-    if (event.altKey || event.ctrlKey) {
+    // i dont want user to use alt, tap and control key that will show up in the box. so help me to prevent that
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey|| event.tabKey) {
       return;
     }
     if (done || isLoading) return;  // If the game is done, do nothing
