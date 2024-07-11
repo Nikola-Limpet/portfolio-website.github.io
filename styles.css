@@ -57,7 +57,7 @@ h1, h2, h3 {
 
 .name span {
   font-size: 3.5rem;
-  color: var(--hotmag);
+  color: var(--aqua);
   display: block;
 }
 #intro h2 {
