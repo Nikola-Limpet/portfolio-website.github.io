@@ -28,7 +28,12 @@ body{
   padding: 0;
   margin: 0;
   font-family: var(--sans);
-  background-color: var(--black);
+  background: rgb(9,115,121);
+  background: linear-gradient(90deg, rgba(9,115,121,1) 16%, 
+    rgba(14,112,125,1) 17%, rgba(62,84,160,1) 26%,
+    rgba(75,95,162,1) 42%,
+    rgba(149,78,171,1) 72%,
+    rgba(140,217,204,1) 96%);
   color: var(--white);
   font-size: var(--font-size);
 
@@ -183,8 +188,9 @@ footer a {
 footer a:hover {
   color: var(--hotmag); 
 }
-.highlight {  
-  font-family: var(--mono); 
+#highlight {  
+  font-family: var(--mono);
+  color: var(--hotmag); 
 }
 .gradient {
   background: rgb(9,55,121);

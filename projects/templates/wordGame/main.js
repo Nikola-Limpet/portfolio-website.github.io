@@ -42,7 +42,7 @@ async function init() {
       // TODO: valitate the word
     isLoading = true;
     setLoading(isLoading);
-    const response = await fetch("https://words.dev-apis.com/validate-word",
+    const response = await fetch("https://wordj.dev-apis.com/validate-word",
       { method: "POST",
         body: JSON.stringify({ word: currentGuess }),
         headers: { "Content-Type": "application/json" },
