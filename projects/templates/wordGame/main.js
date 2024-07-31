@@ -40,21 +40,21 @@ async function init() {
     
       
       // TODO: valitate the word
-    isLoading = true;
-    setLoading(isLoading);
-    const response = await fetch("https://wordj.dev-apis.com/validate-word",
-      { method: "POST",
-        body: JSON.stringify({ word: currentGuess }),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-    const { validWord } = await response.json();
-    isLoading = false;
-    setLoading(isLoading);
-    if (!validWord) {
-      markInvalidWord();
-      return;
-    }
+    // isLoading = true;
+    // setLoading(isLoading);
+    // const response = await fetch("https://wordj.dev-apis.com/validate-word",
+    //   { method: "POST",
+    //     body: JSON.stringify({ word: currentGuess }),
+    //     headers: { "Content-Type": "application/json" },
+    //   }
+    // );
+    // const { validWord } = await response.json();
+    // isLoading = false;
+    // setLoading(isLoading);
+    // if (!validWord) {
+    //   markInvalidWord();
+    //   return;
+    // }
 
       // TODO: do all marking  as "correct" and "wrong" here
       const currentParts = currentGuess.split("");
