@@ -28,12 +28,7 @@ body{
   padding: 0;
   margin: 0;
   font-family: var(--sans);
-  background: rgb(9,115,121);
-  background: linear-gradient(90deg, rgba(9,115,121,1) 16%, 
-    rgba(14,112,125,1) 17%, rgba(62,84,160,1) 26%,
-    rgba(75,95,162,1) 42%,
-    rgba(149,78,171,1) 72%,
-    rgba(140,217,204,1) 96%);
+  background-color: var(--black);
   color: var(--white);
   font-size: var(--font-size);
 
