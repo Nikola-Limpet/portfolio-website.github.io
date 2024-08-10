@@ -59,7 +59,7 @@
   /* intro  */
   #intro {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     padding:0;
   }
 
@@ -72,21 +72,29 @@
   }
 
   .name span {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--aqua);
     display: block;
   }
   #intro h2 {
     font-size: 4rem;
-    font-weight: 400;
+    font-weight: 500;
   }
   #contact {
     width: 100%;
     background-color: var(--plum);
     text-align: center;
-    padding: 3rem 0;
-    margin: 0 auto;
+    padding: 0;
+    margin: auto;
+    margin-bottom: 1.5rem;
     font-family: var(--mono);
+    height: 100%;
+  }
+  #contact h2 {
+    font-size: 2rem;
+    color: var(--aqua);
+    margin: 0;
+    padding: 2rem 0;
   }
 
   #contact a {
@@ -98,7 +106,8 @@
   }
 
   #contact p:last-child {
-    margin-top: 3rem;
+    margin-top: 6px;
+    margin-bottom: 12px;
   }
 
 
@@ -107,7 +116,8 @@
   nav {
     font-family: var(--mono);
     font-size: 80%;
-    padding: 1rem;
+    padding: 0rem;
+    margin: 0;
   }
 
   nav h1 a {
@@ -149,7 +159,7 @@
   }
   .button {
     background-color: var(--magenta);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;  
     border-radius: 5px;
     border-bottom: 2px solid var(--hotmag);
     color: var(--white);
@@ -215,7 +225,8 @@
   }
 
   img {
-    max-width: 100%;  
+    max-width: 100%; 
+    height: auto; 
   }
 
 }
@@ -226,6 +237,8 @@
     padding: 4rem 0;
     background-repeat: no-repeat;
     background-position: 86% 20%;
+    background-size: 100%;
+    max-width: 100%;
   }
 
 }
