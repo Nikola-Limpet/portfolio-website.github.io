@@ -41,7 +41,7 @@
     padding: 0;
     margin: 0;
     font-family: var(--sans);
-    background-color: var(--black);
+    background-color: var(--white);
     color: var(--white);
     font-size: var(--font-size);
     line-height: 1.5;
@@ -157,6 +157,10 @@
   nav a:hover {
     color: var(--hotmag);
   }
+  #name {
+    font-size: 2rem;
+    color: cornsilk
+  }
   .button {
     background-color: var(--magenta);
     padding: 0.5rem 1rem;  
@@ -234,12 +238,20 @@
 @layer intro {
   #intro {
     background-image: url(https://assets.codepen.io/296057/fem-comet.jpg);
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-repeat: no-repeat;
     background-position: 86% 20%;
     background-size: 100%;
     max-width: 100%;
   }
-
+}
+@layer contact {
+  #contact {
+    background-image: url(https://assets.codepen.io/296057/fem-aurora.jpg);
+    background-color: var(--black);
+    text-align: center;
+    padding: 2rem 0 6rem 0;
+    background-repeat: no-repeat;
+  }
 }
 
