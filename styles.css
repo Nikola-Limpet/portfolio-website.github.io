@@ -139,6 +139,9 @@
     text-align: center;
 
   }
+  #logo {
+    background-image: url();
+  }
   nav [class^="fa"] {
     font-size: 150%;
     color: var(--aqua);
@@ -174,20 +177,6 @@
     background-color: var(--hotmag);
     color: whitesmoke;
   }
-
-  @media screen and (min-width: 850px) {
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    nav li:first-child {
-      flex-basis: auto;
-      text-align: left;
-        margin-right: auto;
-    }
-  }
-
   /* footer */
   footer {
     text-align: center;
@@ -238,7 +227,7 @@
 @layer intro {
   #intro {
     background-image: url(https://assets.codepen.io/296057/fem-comet.jpg);
-    padding: 2rem 0;
+    padding: 1rem 0;
     background-repeat: no-repeat;
     background-position: 86% 20%;
     background-size: 100%;
@@ -252,6 +241,42 @@
     text-align: center;
     padding: 2rem 0 6rem 0;
     background-repeat: no-repeat;
+  }
+}
+@layer header {
+  nav {
+    padding: 1rem 0;
+  }
+  @media (max-width: 830px) {
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0; 
+    }
+    nav li:first-child {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    header {
+      padding: 0;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      flex-basis: auto;
+    }
+  }
+  @layer header {
+    header {
+      background-image: url(https://img.freepik.com/free-vector/gradient-starry-night-background-with-galaxy_23-2148289563.jpg?w=1060&t=st=1723352726~exp=1723353326~hmac=bb71bc01ee8b68d101e226c330e80851cf63e7ed3e87d1200fa6f3c55f90624d);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
   }
 }
 
